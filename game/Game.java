@@ -20,17 +20,22 @@ public class Game {
 	
 	private Location[] world;
 	private static int maxLocations = 10;
-	private int noOfLocations;
+	private int noOfLocations = 0;
 	
 	private Item[] items;	//item array
 	private static int maxItems = 50;
-	private int noOfItems;
-
+	private int noOfItems = 0;
+	
+	private NPC[] npcs;
+	private static int maxNPCs = 20;
+	private int noOfNPCs = 0;
+	
 	public Game() {
 		world = new Location[maxLocations];
-		noOfLocations = 0;
+	//	noOfLocations = 0;
 		items = new Item[maxItems];
-		noOfItems = 0;
+	//	noOfItems = 0;
+		npcs = new NPC[maxNPCs];
 		
 		//Building the game world
 		GameWorldSetUp setUp = new GameWorldSetUp();
@@ -45,6 +50,11 @@ public class Game {
 	public void addItem(Item item) {
 		items[noOfItems] = item;
 		noOfItems++;
+	}
+	
+	public void addNPC(NPC npc) {
+		npcs[noOfNPCs] = npc;
+		noOfNPCs++;
 	}
 	
 	public Location getLocation(String name) {
@@ -109,19 +119,20 @@ public class Game {
 		
 		/*TO DO
 		ok! change every item in game file to using the objects in items array
-		-wearable items: create default clothes in world and add to player
+		ok! wearable items: create default clothes in world and add to player
 		-wearable items: add durability, health, protection 
+		-control why npc is not listed when location is described
 		
 		
 		*/
 		
 		//TEST
 		
-		System.out.println(noOfItems);
+	/*	System.out.println(noOfItems);
 		for(int i = 0; i < noOfItems; i++) {
 			System.out.println(items[i].getName());
 		}
-		
+	*/
 		//_______________//
 		
 		
@@ -131,17 +142,11 @@ public class Game {
 		parts = playerName.split(" ");
 		playerName = parts[0];
 		
-		Location theLeakyCuldron = new Room();
-		theLeakyCuldron = this.getLocation("the Leaky Culdron"); //loading the Leaky Culdron from world array
-		
-		Player player = new Player(playerName, theLeakyCuldron, (WearableItem)this.getItem("basic_shirt"), (WearableItem)this.getItem("basic_pants"), (WearableItem)this.getItem("basic_shoes"));
-		
+		Player player = new Player(playerName, this.getLocation("the Leaky Culdron"), (WearableItem)this.getItem("basic_shirt"), (WearableItem)this.getItem("basic_pants"), (WearableItem)this.getItem("basic_shoes"));
 		
 		System.out.println("Nice to meet you "+player.getName()+".");
 		GameSetUp.showDiagonAlley();
-		Location DiagonAlley = new OutdoorsArea();
-		DiagonAlley = this.getLocation("Diagon Alley"); //loading Diagon Alley from world array
-		player.moveTo(DiagonAlley);
+		player.moveTo(this.getLocation("Diagon Alley"));
 		
 		//Game loop
 		System.out.println("What do you want to do?");

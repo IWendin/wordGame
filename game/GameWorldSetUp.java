@@ -98,6 +98,11 @@ public class GameWorldSetUp {
 		theLeakyCuldron.addItem(wizardShirt);
 		game.addItem(wizardShirt);
 		
+		//NPC
+		NPC npc = new NPC(UnknownVault, 30, "the old dragon");
+		UnknownVault.addNPC(npc);
+		game.addNPC(npc);
+		
 		return game;
 	}
 	

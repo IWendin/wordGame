@@ -18,6 +18,8 @@ public class Location {
 	private Boolean firstTimeVisiting;
 	private Item items[];
 	private int numberOfItems = 0;
+	private NPC[] npcs;
+	private int numberOfNPCs = 0;
 
 	
 	//Default values and messages
@@ -26,6 +28,7 @@ public class Location {
 	private String defaultFirstIntroduction = "You have entered a magical location. There are many things here you haven't seen before";
 	private static int maxNumberOfPaths = 4;
 	private static int maxNumberOfItems = 100;
+	private static int maxNumberOfNPCs = 10;
 	
 	//Konstruktor
 	public Location() {
@@ -35,6 +38,7 @@ public class Location {
 		this.paths = new Location[maxNumberOfPaths];
 		this.firstTimeVisiting = true;
 		this.items = new Item[maxNumberOfItems];
+		this.npcs = new NPC[maxNumberOfNPCs];
 	}
 	//Konstruktor
 	public Location(String name) {
@@ -44,6 +48,21 @@ public class Location {
 		this.paths = new Location[maxNumberOfPaths];
 		this.firstTimeVisiting = true;
 		this.items = new Item[maxNumberOfItems];
+		this.npcs = new NPC[maxNumberOfNPCs];
+	}
+	
+	public void addNPC(NPC npc) {
+		this.npcs[numberOfNPCs] = npc;
+		numberOfNPCs++;
+	}
+	
+	public void listNPCs() {
+		if(numberOfNPCs > 0) {
+			System.out.println("In "+this.name+" there is a ");
+			for(int i = 0; i < numberOfNPCs; i++) {
+				System.out.println(npcs[i].getName());
+			}
+		}
 	}
 	
 	public void addPath(Location destination, int direction) {
@@ -193,7 +212,8 @@ public class Location {
 	
 	public void describeYourself(Player player) {
 		System.out.println(description);
-		this.listItems();		
+		this.listItems();
+		this.listNPCs();
 	}
 	
 	public String getName() {

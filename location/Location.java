@@ -58,10 +58,11 @@ public class Location {
 	
 	public void listNPCs() {
 		if(numberOfNPCs > 0) {
-			System.out.println("In "+this.name+" there is a ");
+			System.out.print("There is ");
 			for(int i = 0; i < numberOfNPCs; i++) {
-				System.out.println(npcs[i].getName());
+				System.out.print(" "+npcs[i].getName()+" ");
 			}
+			System.out.println("in front of you");
 		}
 	}
 	

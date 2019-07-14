@@ -128,11 +128,16 @@ public class Game {
 		
 		//TEST
 		
-	/*	System.out.println(noOfItems);
+/*		System.out.println(noOfItems);
 		for(int i = 0; i < noOfItems; i++) {
 			System.out.println(items[i].getName());
 		}
-	*/
+		
+		System.out.println(noOfNPCs+ "in the game npc array");
+		for(int i = 0; i < noOfNPCs; i++) {
+			System.out.println(npcs[i].getName());
+		}
+*/	
 		//_______________//
 		
 		

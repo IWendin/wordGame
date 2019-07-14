@@ -99,9 +99,13 @@ public class GameWorldSetUp {
 		game.addItem(wizardShirt);
 		
 		//NPC
-		NPC npc = new NPC(UnknownVault, 30, "the old dragon");
+		NPC npc = new NPC(UnknownVault, 30, "an old dragon");
 		UnknownVault.addNPC(npc);
 		game.addNPC(npc);
+		
+		NPC shopping_wizard = new NPC(DiagonAlley, 100, "a shopping wizard");
+		DiagonAlley.addNPC(shopping_wizard);
+		game.addNPC(shopping_wizard);
 		
 		return game;
 	}

@@ -50,6 +50,7 @@ public class Room extends Location {
 			}
 		}
 		this.listItems();
+		this.listNPCs();
 		this.listPaths(player, door);
 		System.out.println("");
 	}

@@ -47,6 +47,7 @@ public class OutdoorsArea extends Location {
 			}
 		}
 		this.listItems();
+		this.listNPCs();
 		this.listPaths(player, path);		//test
 		System.out.println("");
 	}

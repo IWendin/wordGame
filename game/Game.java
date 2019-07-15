@@ -32,9 +32,7 @@ public class Game {
 	
 	public Game() {
 		world = new Location[maxLocations];
-	//	noOfLocations = 0;
 		items = new Item[maxItems];
-	//	noOfItems = 0;
 		npcs = new NPC[maxNPCs];
 		
 		//Building the game world
@@ -63,12 +61,10 @@ public class Game {
 			if(world[i].getName() == name) {
 				loc = world[i];
 				break;
-			}
-			else {
+			} else {
 				//Searching next array element
 			}
-		}
-		return loc;
+		} return loc;
 	}
 	
 	public Item getItem(String name) {
@@ -77,12 +73,10 @@ public class Game {
 			if(items[i].getName().contentEquals(name)) {
 				it = items[i];
 				break;
-			}
-			else {
+			} else {
 				//
 			}
-		}
-		return it;
+		} return it;
 	}
 	
 	private Location directionToPosition(Location pos, String direction) { //function returns location in the direction
@@ -107,8 +101,7 @@ public class Game {
 			if((pos.getPath(dir) != null)) {	//there is a path in the direction
 				return pos.getPath(dir);
 			}
-		}
-		return pos;	//if path in the direction does not exist -> remain
+		} return pos;	//if path in the direction does not exist -> remain
 	}
 	
 	public void run() {
@@ -121,8 +114,8 @@ public class Game {
 		ok! change every item in game file to using the objects in items array
 		ok! wearable items: create default clothes in world and add to player
 		-wearable items: add durability, health, protection 
-		-control why npc is not listed when location is described
-		
+		ok! control why npc is not listed when location is described
+		-finish adding the window: react on enter, display text
 		
 		*/
 		

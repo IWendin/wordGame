@@ -72,7 +72,6 @@ public class Location {
 				paths[direction] = destination;
 				destination.addPath(this,(3-direction));
 			} else {
-//				System.out.println("There is already a path here");	//Control
 			}
 		} else {
 			System.out.println("There only exists four directions on a compass");
@@ -143,7 +142,7 @@ public class Location {
 	public void addItem(Item it) {
 		items[numberOfItems] = it;
 		numberOfItems++;
-		System.out.println(this.getName()+" has "+numberOfItems+" number of items"); //Control
+	//	System.out.println(this.getName()+" has "+numberOfItems+" number of items"); //Control
 	}
 	
 	public void removeItem(String itemName) {

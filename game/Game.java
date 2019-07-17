@@ -14,6 +14,8 @@ import lab1.*;
 import java.util.Scanner;
 
 public class Game {
+	
+	private Window window;
 
 	private static String command;
 	private static String[] parts;
@@ -104,18 +106,33 @@ public class Game {
 		} return pos;	//if path in the direction does not exist -> remain
 	}
 	
+	public void tomsIntro() {
+		window.print("Hello there, I'm Tom, wellcome to the Leaky Culdron.");
+		window.print("You look like a Hogwarts first year");
+		window.print("What is your name young student?");
+	}
+	
+	public void showDiagonAlley() {
+		window.print("Diagon Alley, where you can shop for all of your school items, is on the other side of the brick wall over there.");
+		window.print("Here, I'll help you open it up.");
+		window.print("--Tom knocks on a handful carefully selected bricks-- ");
+		window.print("--With a low rumble from the moving bricks, an opening is created in the wall--");
+		window.print("--You hear noice of humans from the opening and walk into another unknown place--");
+		window.print("");
+	}
+	
 	public void run() {
 		
 		Scanner sc = new Scanner(System.in);
-		GameWorldSetUp GameSetUp = new GameWorldSetUp();
-		
+		window = new Window();
+		//GameWorldSetUp GameSetUp = new GameWorldSetUp();
 		
 		/*TO DO
 		ok! change every item in game file to using the objects in items array
 		ok! wearable items: create default clothes in world and add to player
 		-wearable items: add durability, health, protection 
 		ok! control why npc is not listed when location is described
-		-finish adding the window: react on enter, display text
+		-connect window to program, make it return inputed string
 		
 		*/
 		
@@ -135,7 +152,7 @@ public class Game {
 		
 		
 		//Initiating player
-		GameSetUp.tomsIntro();
+		tomsIntro();
 		String playerName = sc.nextLine();
 		parts = playerName.split(" ");
 		playerName = parts[0];
@@ -143,7 +160,7 @@ public class Game {
 		Player player = new Player(playerName, this.getLocation("the Leaky Culdron"), (WearableItem)this.getItem("basic_shirt"), (WearableItem)this.getItem("basic_pants"), (WearableItem)this.getItem("basic_shoes"));
 		
 		System.out.println("Nice to meet you "+player.getName()+".");
-		GameSetUp.showDiagonAlley();
+		showDiagonAlley();
 		player.moveTo(this.getLocation("Diagon Alley"));
 		
 		//Game loop

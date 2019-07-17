@@ -110,13 +110,15 @@ public class GameWorldSetUp {
 		return game;
 	}
 	
-	public void tomsIntro() {
+/*	public void tomsIntro() {
 		System.out.println("Hello there, I'm Tom, wellcome to the Leaky Culdron.");
 		System.out.println("You look like a Hogwarts first year");
 		System.out.println("What is your name young student?");
 	}
+	*/
 	
-	public void showDiagonAlley() {
+	
+/*	public void showDiagonAlley() {
 		System.out.println("Diagon Alley, where you can shop for all of your school items, is on the other side of the brick wall over there.");
 		System.out.println("Here, I'll help you open it up.");
 		System.out.println("--Tom knocks on a handful carefully selected bricks-- ");
@@ -124,4 +126,5 @@ public class GameWorldSetUp {
 		System.out.println("--You hear noice of humans from the opening and walk into another unknown place--");
 		System.out.println("");
 	}
+	*/
 }

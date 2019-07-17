@@ -48,10 +48,14 @@ public class Window {
 			
 		}
 	};
+
+	public void print(String text) {
+		jta.append(text + nl);
+	}
 	
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		
-		/*SwingUtilities.invokeLater(new Runnable() {
+		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				JFrame frame = new Window();
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,8 +63,8 @@ public class Window {
 				frame.setVisible(true);
 			}
 		});
-	*/
+	
 		new Window();
 		
-	}
+	}*/
 }
